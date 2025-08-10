@@ -29,6 +29,15 @@ function Make() {
         <h1 className='text-2xl font-bold m-1'>Body</h1>
       <textarea className='w-xl bg-amber-100 px-2'onChange={(e)=>setBody(e.target.value)}></textarea>
     </div>
+    <div className='mb-2'>
+        <h1 className='text-2xl font-bold m-1'>Category</h1>
+    
+      <select className='w-xl bg-amber-100 px-2'>
+        <option>Urgent</option>
+        <option>Work</option>
+          <option>Personal</option>
+      </select>
+    </div>
     <button className='p-3 px-16 rounded-xl bg-red-500 hover:bg-red-700 text-black text-2xl font-bold'
     onClick={callerFunction}
     >Add</button>
