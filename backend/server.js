@@ -9,7 +9,7 @@ const content = new Schema({
     Title : String ,
     Body : String ,
     Category : {type : String,
-         enum : ["urgent", "work","personal"]
+         enum : ["Urgent", "Work","Personal"]
     },
     Done :  { type : Boolean,
           default : false}

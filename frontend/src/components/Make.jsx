@@ -5,12 +5,14 @@ function Make() {
         const [title,setTitle] = useState("");
         const [body, setBody] = useState("");
         const navigate = useNavigate();
+        const [selected, SetSelected] = useState("Urgent");
 
         const callerFunction = async ()=>{
             await fetch('http://localhost:3000/notes',{
                method: "POST",
                body: JSON.stringify({Title:title,
-                     Body:body
+                     Body:body,
+                     Category : selected
                }),
                headers:{
                   "Content-Type": "application/json"
@@ -32,10 +34,10 @@ function Make() {
     <div className='mb-2'>
         <h1 className='text-2xl font-bold m-1'>Category</h1>
     
-      <select className='w-xl bg-amber-100 px-2'>
-        <option>Urgent</option>
-        <option>Work</option>
-          <option>Personal</option>
+      <select className='w-xl bg-amber-100 px-2' value ={selected} onChange={(e)=>SetSelected(e.target.value)}>
+        <option value="Urgent">Urgent</option>
+        <option value="Work">Work</option>
+          <option value="Personal">Personal</option>
       </select>
     </div>
     <button className='p-3 px-16 rounded-xl bg-red-500 hover:bg-red-700 text-black text-2xl font-bold'

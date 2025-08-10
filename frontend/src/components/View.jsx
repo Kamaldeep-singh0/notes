@@ -22,7 +22,7 @@ function View() {
   return (
     <div>
              {notes.map(note => 
-                (<ViewCard title={note.Title} body={note.Body} key={note._id} id={note._id} onDelete={handleDelete}/>)
+                (<ViewCard title={note.Title} body={note.Body} key={note._id} id={note._id} onDelete={handleDelete} category={note.Category} done={note.Done}/>)
              )}
     </div>
   )
